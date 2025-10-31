@@ -1,0 +1,17 @@
+<!-- templates/edit_item.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Item #{{ item.id }}</title>
+</head>
+<body>
+  <h1>Edit Item #{{ item.id }}</h1>
+
+  <form action="{{ url_for('update_item', item_id=item.id) }}" method="post">
+    <input type="text" name="title" value="{{ item.title }}" required>
+    <button type="submit">Save</button>
+    <a href="{{ url_for('list_items') }}">Cancel</a>
+  </form>
+</body>
+</html>
